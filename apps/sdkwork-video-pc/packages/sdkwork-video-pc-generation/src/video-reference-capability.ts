@@ -1,4 +1,5 @@
 import type { MediaResourceLike } from '@sdkwork/assets-pc-commons';
+import type { SdkworkGenerationPricedModel } from './generation-asset-config';
 
 export type VideoReferenceAssetKind = 'image' | 'audio' | 'video';
 
@@ -39,7 +40,7 @@ export interface VideoReferenceAssetInput {
   sizeBytes?: number;
 }
 
-export interface VideoGenerationModelOption {
+export interface VideoGenerationModelOption extends SdkworkGenerationPricedModel {
   id: string;
   catalogKey: string;
   model: string;
@@ -62,8 +63,6 @@ export interface VideoGenerationModelOption {
   supportsStreaming: boolean;
   supportsTools: boolean;
   supportsJsonSchema: boolean;
-  officialReferencePrices: { currency: string; unitPrice: string; usageMeter: string }[];
-  priceAvailability: { status: 'reference' | 'unavailable'; reason?: string | null };
 }
 
 export interface VideoGenerationModelGroup {

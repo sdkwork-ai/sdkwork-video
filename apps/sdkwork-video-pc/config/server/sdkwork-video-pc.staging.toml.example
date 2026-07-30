@@ -4,7 +4,7 @@ host = "0.0.0.0"
 port = 8080
 
 [database]
-url = "postgresql://staging-host:5432/sdkwork_video_staging"
+url = "postgresql://staging-host:5432/sdkwork_ai_staging"
 
 [redis]
 url = "redis://staging-host:6379/0"

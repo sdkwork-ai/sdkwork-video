@@ -19,14 +19,13 @@ import {
   resolveVideoReferenceKindLimit,
   resolveVideoReferenceModeUpload,
   VIDEO_REFERENCE_MODE_ORDER,
-  type VideoGenerationModelOption,
   type VideoReferenceAssetInput,
   type VideoReferenceAssetKind,
   type VideoReferenceCapability,
   type VideoReferenceMode,
   type VideoReferenceModeUpload,
 } from '../video-reference-capability';
-import type { VideoGenerationPanelProps, VideoGenerationSubmitInput } from '../video-generation-panel-types';
+import type { VideoGenerationPanelProps } from '../video-generation-panel-types';
 import { VideoGenerationModePopup } from './VideoGenerationModePopup';
 
 interface ReferenceAssetPreview {
@@ -226,7 +225,6 @@ function VideoGenerationBottomBar({
 
 const VIDEO_REFERENCE_MODE_ICONS = { text_to_video: Sparkles, first_frame: ImageIcon, first_last_frame: Timer, multi_reference: ImageIcon, omni_reference: SlidersHorizontal } satisfies Record<VideoReferenceMode, typeof Sparkles>;
 const VIDEO_REFERENCE_MODE_LABEL_KEYS = { text_to_video: 'playground.videoReference.mode.textToVideo', first_frame: 'playground.videoReference.mode.firstFrame', first_last_frame: 'playground.videoReference.mode.firstLastFrame', multi_reference: 'playground.videoReference.mode.multiReference', omni_reference: 'playground.videoReference.mode.omniReference' } satisfies Record<VideoReferenceMode, string>;
-const VIDEO_REFERENCE_MODE_DESCRIPTION_KEYS = { text_to_video: 'playground.videoReference.mode.textToVideo.desc', first_frame: 'playground.videoReference.mode.firstFrame.desc', first_last_frame: 'playground.videoReference.mode.firstLastFrame.desc', multi_reference: 'playground.videoReference.mode.multiReference.desc', omni_reference: 'playground.videoReference.mode.omniReference.desc' } satisfies Record<VideoReferenceMode, string>;
 const VIDEO_REFERENCE_ROLE_LABEL_KEYS = { first_frame: 'playground.videoReference.role.firstFrame', last_frame: 'playground.videoReference.role.lastFrame', reference_image: 'playground.videoReference.role.referenceImage', reference_audio: 'playground.videoReference.role.referenceAudio', reference_video: 'playground.videoReference.role.referenceVideo' } satisfies Record<VideoReferenceAssetInput['role'], string>;
 
 function VideoReferenceAssetUploader({ mode, modeUpload, referenceAssets, uploadError, videoReferenceCapability, onAddReferenceAssets, onChangeMode, onRemoveReferenceAsset, onUploadError }: {
@@ -283,7 +281,7 @@ function VideoReferenceAssetUploader({ mode, modeUpload, referenceAssets, upload
               const accepted: Array<{ file: File; kind: VideoReferenceAssetKind; kindIndex: number }> = [];
               let skippedByKind = false; let skippedByTotal = false;
               selectedFiles.forEach((file) => {
-                if (acceptedFiles.length >= remainingSlots) { skippedByTotal = true; return; }
+                if (accepted.length >= remainingSlots) { skippedByTotal = true; return; }
                 const kind = readReferenceAssetKind(file);
                 if (!kind) { skippedByKind = true; return; }
                 const kindLimit = resolveVideoReferenceKindLimit(videoReferenceCapability, mode, kind);

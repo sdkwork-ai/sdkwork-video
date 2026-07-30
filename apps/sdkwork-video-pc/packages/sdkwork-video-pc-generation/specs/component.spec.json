@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.component.spec",
+  "component": {
+    "name": "@sdkwork/video-pc-generation",
+    "displayName": "SDKWork Video PC Generation",
+    "version": "0.1.0",
+    "type": "react-package",
+    "root": "sdkwork-video/apps/sdkwork-video-pc/packages/sdkwork-video-pc-generation",
+    "domain": "content",
+    "declaredDomain": "content",
+    "capability": "generation",
+    "surface": "app",
+    "status": "ready",
+    "languages": ["typescript", "react"],
+    "generated": false,
+    "private": true,
+    "manifests": ["package.json"]
+  },
+  "canonicalSpecs": [
+    { "file": "APP_PC_REACT_UI_SPEC.md", "path": "../../../../../sdkwork-specs/APP_PC_REACT_UI_SPEC.md", "purpose": "PC React package boundaries." },
+    { "file": "CODE_STYLE_SPEC.md", "path": "../../../../../sdkwork-specs/CODE_STYLE_SPEC.md", "purpose": "Authored source and generated ownership rules." },
+    { "file": "COMPONENT_SPEC.md", "path": "../../../../../sdkwork-specs/COMPONENT_SPEC.md", "purpose": "Component contract requirements." },
+    { "file": "FRONTEND_CODE_SPEC.md", "path": "../../../../../sdkwork-specs/FRONTEND_CODE_SPEC.md", "purpose": "Frontend source structure." },
+    { "file": "NAMING_SPEC.md", "path": "../../../../../sdkwork-specs/NAMING_SPEC.md", "purpose": "Canonical naming rules." },
+    { "file": "TEST_SPEC.md", "path": "../../../../../sdkwork-specs/TEST_SPEC.md", "purpose": "Verification requirements." },
+    { "file": "TYPESCRIPT_CODE_SPEC.md", "path": "../../../../../sdkwork-specs/TYPESCRIPT_CODE_SPEC.md", "purpose": "TypeScript package rules." }
+  ],
+  "contracts": {
+    "publicExports": [".", "./react"],
+    "runtimeEntrypoints": ["package.json#scripts.typecheck"],
+    "sdkClients": [],
+    "events": [],
+    "configKeys": ["package.json#sdkwork"],
+    "routeManifest": null
+  },
+  "integration": {
+    "authority": "Root SDKWork specs remain authoritative.",
+    "dependencyPolicy": "Consumers integrate through declared package exports.",
+    "sdkPolicy": "This package receives generation services through its host boundary and does not create SDK clients.",
+    "languagePolicy": "TypeScript and React source remain strict and package-owned."
+  },
+  "verification": {
+    "commands": ["pnpm --filter @sdkwork/video-pc-generation typecheck"]
+  }
+}

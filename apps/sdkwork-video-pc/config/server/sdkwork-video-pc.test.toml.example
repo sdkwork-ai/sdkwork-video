@@ -4,7 +4,7 @@ host = "127.0.0.1"
 port = 8081
 
 [database]
-url = "postgresql://localhost:5432/sdkwork_video_test"
+url = "postgresql://localhost:5432/sdkwork_ai_test"
 
 [redis]
 url = "redis://localhost:6379/1"

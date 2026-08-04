@@ -6,7 +6,7 @@ description = "Generated SDK adapter for SDKWork video generation providers."
 
 [dependencies]
 async-trait = "0.1"
-clawrouter-open-sdk.workspace = true
+cloudrouter-open-sdk.workspace = true
 sdkwork-video-generation-provider-spi.workspace = true
 serde = { version = "1", features = ["derive"] }
 serde_json = "1.0"

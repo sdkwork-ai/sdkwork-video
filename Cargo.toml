@@ -30,5 +30,5 @@ sdkwork-video-generation-provider-spi = { path = "crates/sdkwork-video-generatio
 sdkwork-video-generation-service = { path = "crates/sdkwork-video-generation-service" }
 sdkwork-video-generation-mcp-service = { path = "crates/sdkwork-video-generation-mcp-service" }
 sdkwork-video-generation-provider-adapter = { path = "crates/sdkwork-video-generation-provider-adapter" }
-clawrouter-open-sdk = { path = "../sdkwork-clawrouter/sdks/clawrouter-open-sdk/clawrouter-open-sdk-rust/generated/server-openapi" }
+cloudrouter-open-sdk = { path = "../sdkwork-cloudrouter/sdks/cloudrouter-open-sdk/cloudrouter-open-sdk-rust/generated/server-openapi" }
 sdkwork-drive-workspace-service = { path = "../sdkwork-drive/crates/sdkwork-drive-workspace-service" }

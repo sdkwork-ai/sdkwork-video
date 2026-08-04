@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use clawrouter_open_sdk::{
+use cloudrouter_open_sdk::{
     KlingVideoGenerationRequest, OpenAiVideoCreateRequest, ViduImageToVideoRequest,
     ViduReferenceToVideoRequest, ViduStartEndToVideoRequest, ViduTextToVideoRequest,
     VolcengineContentGenerationTaskCreateRequest, VolcengineContentPart,

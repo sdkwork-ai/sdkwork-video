@@ -64,7 +64,7 @@ fn public_contract_is_provider_neutral() {
         .unwrap()
         .to_ascii_lowercase();
     for forbidden in [
-        "clawrouter",
+        "cloudrouter",
         "open-sdk",
         "generated/server-openapi",
         "provider_operation",

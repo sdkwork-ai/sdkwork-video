@@ -27,7 +27,9 @@
     "@sdkwork/assets-pc-commons": "workspace:*",
     "@sdkwork/generations-pc-asset-config": "workspace:*",
     "@sdkwork/generations-pc-studio": "workspace:*",
-    "lucide-react": "catalog:"
+    "lucide-react": "catalog:",
+    "react": "catalog:",
+    "react-i18next": "catalog:"
   },
   "peerDependencies": {
     "@sdkwork/ui-pc-react": "workspace:*",

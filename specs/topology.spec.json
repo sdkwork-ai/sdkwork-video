@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 5,
+  "kind": "sdkwork.app.topology",
+  "appId": "sdkwork-video",
+  "applicationCode": "video",
+  "archetype": "application-http-gateway",
+  "profileRoot": "etc/topology",
+  "profilePattern": "{deploymentProfile}.{environment}.env",
+  "vocabulary": {
+    "deploymentProfile": {
+      "allowed": [
+        "standalone",
+        "cloud"
+      ]
+    },
+    "environment": {
+      "allowed": [
+        "development",
+        "test",
+        "staging",
+        "production"
+      ]
+    }
+  },
+  "defaults": {
+    "developmentProfileId": "standalone.development",
+    "productionProfileId": "cloud.production",
+    "gatewayBind": "127.0.0.1:3900"
+  },
+  "profileFiles": {
+    "standalone.development": "etc/topology/standalone.development.env",
+    "standalone.test": "etc/topology/standalone.test.env",
+    "standalone.staging": "etc/topology/standalone.staging.env",
+    "standalone.production": "etc/topology/standalone.production.env",
+    "cloud.development": "etc/topology/cloud.development.env",
+    "cloud.test": "etc/topology/cloud.test.env",
+    "cloud.staging": "etc/topology/cloud.staging.env",
+    "cloud.production": "etc/topology/cloud.production.env"
+  },
+  "envKeys": {
+    "deploymentProfile": "SDKWORK_VIDEO_DEPLOYMENT_PROFILE",
+    "environment": "SDKWORK_VIDEO_ENVIRONMENT",
+    "profileId": "SDKWORK_VIDEO_PROFILE_ID",
+    "standaloneGatewayBind": "SDKWORK_VIDEO_APPLICATION_PUBLIC_INGRESS_BIND",
+    "apiGatewayBaseUrl": "SDKWORK_VIDEO_PLATFORM_API_GATEWAY_HTTP_URL"
+  },
+  "surfaces": {
+    "application.public-ingress": {
+      "connectivityPlane": "application",
+      "protocols": [
+        "http"
+      ],
+      "bindEnv": "SDKWORK_VIDEO_APPLICATION_PUBLIC_INGRESS_BIND",
+      "httpUrlEnv": "SDKWORK_VIDEO_APPLICATION_PUBLIC_HTTP_URL"
+    },
+    "platform.api-gateway": {
+      "connectivityPlane": "platform",
+      "protocols": [
+        "http"
+      ],
+      "httpUrlEnv": "SDKWORK_VIDEO_PLATFORM_API_GATEWAY_HTTP_URL"
+    }
+  },
+  "cloudPublicHosts": {
+    "application.public-ingress": {
+      "httpHost": "video.sdkwork.com",
+      "environments": {
+        "development": {
+          "httpHost": "video-dev.sdkwork.com"
+        },
+        "test": {
+          "httpHost": "video-test.sdkwork.com"
+        },
+        "staging": {
+          "httpHost": "video-staging.sdkwork.com"
+        }
+      }
+    },
+    "platform.api-gateway": {
+      "httpHost": "api.sdkwork.com",
+      "environments": {
+        "development": {
+          "httpHost": "api-dev.sdkwork.com"
+        },
+        "test": {
+          "httpHost": "api-test.sdkwork.com"
+        },
+        "staging": {
+          "httpHost": "api-staging.sdkwork.com"
+        }
+      }
+    }
+  },
+  "components": {
+    "applicationServer": {
+      "crate": "sdkwork-api-video-standalone-gateway",
+      "binary": "sdkwork-api-video-standalone-gateway"
+    }
+  },
+  "orchestration": {
+    "profiles": {
+      "standalone.development": {
+        "processes": [
+          {
+            "id": "application.public-ingress",
+            "crate": "sdkwork-api-video-standalone-gateway",
+            "binary": "sdkwork-api-video-standalone-gateway",
+            "required": true,
+            "role": "api-standalone-gateway"
+          },
+          {
+            "id": "video-browser",
+            "role": "client",
+            "applicationRoot": "apps/sdkwork-video-pc",
+            "bindEnv": "SDKWORK_VIDEO_WEB_DEV_INGRESS_BIND",
+            "runtimeTargets": [
+              "browser"
+            ],
+            "clientArchitectures": [
+              "pc-web",
+              "h5"
+            ],
+            "required": true
+          }
+        ],
+        "healthSurfaces": [
+          "application.public-ingress"
+        ],
+        "browserDeliveries": [
+          {
+            "id": "video-adaptive-web",
+            "applicationRoot": "apps/sdkwork-video-pc",
+            "clientArchitectures": [
+              "pc-web",
+              "h5"
+            ],
+            "originMode": "same-origin",
+            "deliveryMode": "dev-server-proxy",
+            "clientProcessId": "video-browser",
+            "apiSurfaceId": "application.public-ingress",
+            "preserveCanonicalPaths": true,
+            "tabletArchitecture": "pc-web",
+            "renderers": {
+              "pc-web": {
+                "applicationRoot": "apps/sdkwork-video-pc",
+                "script": "dev",
+                "defaultPort": 5577,
+                "portEnv": "SDKWORK_VIDEO_PC_INTERNAL_DEV_PORT",
+                "env": {}
+              },
+              "h5": {
+                "applicationRoot": "apps/sdkwork-video-h5",
+                "script": "dev",
+                "defaultPort": 5578,
+                "portEnv": "SDKWORK_VIDEO_H5_INTERNAL_DEV_PORT",
+                "env": {}
+              }
+            }
+          }
+        ]
+      },
+      "standalone.test": {
+        "processes": [
+          {
+            "id": "application.public-ingress",
+            "crate": "sdkwork-api-video-standalone-gateway",
+            "binary": "sdkwork-api-video-standalone-gateway",
+            "required": true,
+            "role": "api-standalone-gateway"
+          },
+          {
+            "id": "video-browser",
+            "role": "client",
+            "applicationRoot": "apps/sdkwork-video-pc",
+            "bindEnv": "SDKWORK_VIDEO_WEB_DEV_INGRESS_BIND",
+            "runtimeTargets": [
+              "browser"
+            ],
+            "clientArchitectures": [
+              "pc-web",
+              "h5"
+            ],
+            "required": true
+          }
+        ],
+        "healthSurfaces": [
+          "application.public-ingress"
+        ],
+        "browserDeliveries": [
+          {
+            "id": "video-adaptive-web",
+            "applicationRoot": "apps/sdkwork-video-pc",
+            "clientArchitectures": [
+              "pc-web",
+              "h5"
+            ],
+            "originMode": "same-origin",
+            "deliveryMode": "dev-server-proxy",
+            "clientProcessId": "video-browser",
+            "apiSurfaceId": "application.public-ingress",
+            "preserveCanonicalPaths": true,
+            "tabletArchitecture": "pc-web",
+            "renderers": {
+              "pc-web": {
+                "applicationRoot": "apps/sdkwork-video-pc",
+                "script": "dev",
+                "defaultPort": 5577,
+                "portEnv": "SDKWORK_VIDEO_PC_INTERNAL_DEV_PORT",
+                "env": {}
+              },
+              "h5": {
+                "applicationRoot": "apps/sdkwork-video-h5",
+                "script": "dev",
+                "defaultPort": 5578,
+                "portEnv": "SDKWORK_VIDEO_H5_INTERNAL_DEV_PORT",
+                "env": {}
+              }
+            }
+          }
+        ]
+      },
+      "standalone.staging": {
+        "processes": [
+          {
+            "id": "application.public-ingress",
+            "crate": "sdkwork-api-video-standalone-gateway",
+            "binary": "sdkwork-api-video-standalone-gateway",
+            "required": true,
+            "role": "api-standalone-gateway"
+          }
+        ],
+        "healthSurfaces": [
+          "application.public-ingress"
+        ]
+      },
+      "standalone.production": {
+        "processes": [
+          {
+            "id": "application.public-ingress",
+            "crate": "sdkwork-api-video-standalone-gateway",
+            "binary": "sdkwork-api-video-standalone-gateway",
+            "required": true,
+            "role": "api-standalone-gateway"
+          }
+        ],
+        "healthSurfaces": [
+          "application.public-ingress"
+        ]
+      },
+      "cloud.development": {
+        "processes": [
+          {
+            "id": "video-browser",
+            "role": "client",
+            "applicationRoot": "apps/sdkwork-video-pc",
+            "bindEnv": "SDKWORK_VIDEO_WEB_DEV_INGRESS_BIND",
+            "runtimeTargets": [
+              "browser"
+            ],
+            "clientArchitectures": [
+              "pc-web",
+              "h5"
+            ],
+            "required": true
+          }
+        ],
+        "healthSurfaces": [
+          "application.public-ingress",
+          "platform.api-gateway"
+        ],
+        "browserDeliveries": [
+          {
+            "id": "video-adaptive-web",
+            "applicationRoot": "apps/sdkwork-video-pc",
+            "clientArchitectures": [
+              "pc-web",
+              "h5"
+            ],
+            "originMode": "same-origin",
+            "deliveryMode": "dev-server-proxy",
+            "clientProcessId": "video-browser",
+            "apiSurfaceId": "application.public-ingress",
+            "preserveCanonicalPaths": true,
+            "tabletArchitecture": "pc-web",
+            "renderers": {
+              "pc-web": {
+                "applicationRoot": "apps/sdkwork-video-pc",
+                "script": "dev",
+                "defaultPort": 5577,
+                "portEnv": "SDKWORK_VIDEO_PC_INTERNAL_DEV_PORT",
+                "env": {}
+              },
+              "h5": {
+                "applicationRoot": "apps/sdkwork-video-h5",
+                "script": "dev",
+                "defaultPort": 5578,
+                "portEnv": "SDKWORK_VIDEO_H5_INTERNAL_DEV_PORT",
+                "env": {}
+              }
+            }
+          }
+        ]
+      },
+      "cloud.test": {
+        "processes": [
+          {
+            "id": "application.public-ingress",
+            "crate": "sdkwork-api-video-standalone-gateway",
+            "binary": "sdkwork-api-video-standalone-gateway",
+            "required": true,
+            "role": "api-standalone-gateway"
+          },
+          {
+            "id": "video-browser",
+            "role": "client",
+            "applicationRoot": "apps/sdkwork-video-pc",
+            "bindEnv": "SDKWORK_VIDEO_WEB_DEV_INGRESS_BIND",
+            "runtimeTargets": [
+              "browser"
+            ],
+            "clientArchitectures": [
+              "pc-web",
+              "h5"
+            ],
+            "required": true
+          }
+        ],
+        "healthSurfaces": [
+          "application.public-ingress",
+          "platform.api-gateway"
+        ],
+        "browserDeliveries": [
+          {
+            "id": "video-adaptive-web",
+            "applicationRoot": "apps/sdkwork-video-pc",
+            "clientArchitectures": [
+              "pc-web",
+              "h5"
+            ],
+            "originMode": "same-origin",
+            "deliveryMode": "dev-server-proxy",
+            "clientProcessId": "video-browser",
+            "apiSurfaceId": "application.public-ingress",
+            "preserveCanonicalPaths": true,
+            "tabletArchitecture": "pc-web",
+            "renderers": {
+              "pc-web": {
+                "applicationRoot": "apps/sdkwork-video-pc",
+                "script": "dev",
+                "defaultPort": 5577,
+                "portEnv": "SDKWORK_VIDEO_PC_INTERNAL_DEV_PORT",
+                "env": {}
+              },
+              "h5": {
+                "applicationRoot": "apps/sdkwork-video-h5",
+                "script": "dev",
+                "defaultPort": 5578,
+                "portEnv": "SDKWORK_VIDEO_H5_INTERNAL_DEV_PORT",
+                "env": {}
+              }
+            }
+          }
+        ]
+      },
+      "cloud.staging": {
+        "processes": [
+          {
+            "id": "application.public-ingress",
+            "crate": "sdkwork-api-video-standalone-gateway",
+            "binary": "sdkwork-api-video-standalone-gateway",
+            "required": true,
+            "role": "api-standalone-gateway"
+          }
+        ],
+        "healthSurfaces": [
+          "application.public-ingress",
+          "platform.api-gateway"
+        ]
+      },
+      "cloud.production": {
+        "processes": [
+          {
+            "id": "application.public-ingress",
+            "crate": "sdkwork-api-video-standalone-gateway",
+            "binary": "sdkwork-api-video-standalone-gateway",
+            "required": true,
+            "role": "api-standalone-gateway"
+          }
+        ],
+        "healthSurfaces": [
+          "application.public-ingress",
+          "platform.api-gateway"
+        ]
+      }
+    }
+  }
+}

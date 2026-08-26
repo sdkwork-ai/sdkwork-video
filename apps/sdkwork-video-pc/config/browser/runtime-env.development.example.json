@@ -1,8 +1,0 @@
-{
-  "sdkBaseUrl": "https://api-dev.sdkwork.com/apps/sdkwork-video",
-  "featureFlags": {},
-  "appMetadata": {
-    "name": "SDKWork Video PC",
-    "version": "0.1.0"
-  }
-}

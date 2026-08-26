@@ -1,8 +1,0 @@
-{
-  "sdkBaseUrl": "https://api-staging.sdkwork.com/apps/sdkwork-video",
-  "featureFlags": {},
-  "appMetadata": {
-    "name": "SDKWork Video H5",
-    "version": "0.1.0"
-  }
-}

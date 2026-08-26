@@ -1,0 +1,18 @@
+{
+  "environment": "test",
+  "deploymentProfile": "standalone",
+  "profileId": "standalone.test",
+  "runtimeTarget": "browser",
+  "browserOriginMode": "same-origin",
+  "sdkBaseUrl": "https://api-dev.sdkwork.com/apps/sdkwork-video",
+  "featureFlags": {},
+  "appMetadata": {
+    "name": "SDKWork Video PC",
+    "version": "0.1.0"
+  },
+  "appApiBaseUrl": "/",
+  "backendApiBaseUrl": "/",
+  "driveAppApiBaseUrl": "/",
+  "appbaseAppApiBaseUrl": "/",
+  "deployAppApiBaseUrl": "/"
+}

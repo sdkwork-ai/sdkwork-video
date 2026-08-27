@@ -4,7 +4,6 @@
   "profileId": "standalone.staging",
   "runtimeTarget": "browser",
   "browserOriginMode": "same-origin",
-  "sdkBaseUrl": "https://api-dev.sdkwork.com/apps/sdkwork-video",
   "featureFlags": {},
   "appMetadata": {
     "name": "SDKWork Video PC",
@@ -14,5 +13,7 @@
   "backendApiBaseUrl": "/",
   "driveAppApiBaseUrl": "/",
   "appbaseAppApiBaseUrl": "/",
-  "deployAppApiBaseUrl": "/"
+  "deployAppApiBaseUrl": "/",
+  "openApiBaseUrl": "/",
+  "sdkBaseUrl": "/"
 }

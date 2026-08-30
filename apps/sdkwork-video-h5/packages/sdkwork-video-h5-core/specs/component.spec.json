@@ -14,13 +14,7 @@
     "generated": false
   },
   "contracts": {
-    "sdkDependencies": [
-      {
-        "workspace": "sdkwork-video-app-sdk",
-        "surface": "app-api",
-        "credentialMode": "authenticated-app-api"
-      }
-    ],
+    "sdkDependencies": [],
     "dependencyApiExports": [],
     "dependencyApiSurfaces": [],
     "permissionComposition": {
@@ -52,5 +46,8 @@
         "allowFrontendHintsWithoutServerDuplication": true
       }
     }
+  },
+  "composition": {
+    "consumerIntegrationsExempt": true
   }
 }

@@ -32,3 +32,5 @@ sdkwork-video-generation-mcp-service = { path = "crates/sdkwork-video-generation
 sdkwork-video-generation-provider-adapter = { path = "crates/sdkwork-video-generation-provider-adapter" }
 cloudrouter-open-sdk = { path = "../sdkwork-cloudrouter/sdks/cloudrouter-open-sdk/cloudrouter-open-sdk-rust/generated/server-openapi" }
 sdkwork-drive-workspace-service = { path = "../sdkwork-drive/crates/sdkwork-drive-workspace-service" }
+
+sdkwork_web_core = { path = "../sdkwork-web-framework/crates/sdkwork-web-core", package = "sdkwork-web-core" }

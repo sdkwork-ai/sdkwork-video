@@ -12,7 +12,7 @@
     "privacyPolicyUrl": "https://sdkwork.com/privacy",
     "termsOfServiceUrl": "https://sdkwork.com/terms",
     "iconUrl": "https://cdn.sdkwork.com/apps/sdkwork-video/assets/icon-1024.png",
-    "appType": "APP_NATIVE",
+    "appType": "APP_HTML",
     "versionSource": "manifest",
     "identifiers": {
       "packageName": "com.sdkwork.sdkwork.video.flutter.mobile",
@@ -55,7 +55,7 @@
         "id": "sdkwork-video-flutter-mobile-primary-icon",
         "type": "ICON",
         "purpose": "PRIMARY",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-video/assets/icon-1024.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-video-flutter-mobile/assets/icon-1024.png",
         "platform": "APP",
         "locale": "en-US",
         "width": 1024,
@@ -71,11 +71,55 @@
       },
       "platform": [],
       "metadata": {
-        "generatedBy": "manual"
+        "generatedPlaceholder": true
       }
     },
-    "screenshots": [],
-    "previews": [],
+    "screenshots": [
+      {
+        "id": "sdkwork-video-flutter-mobile-web-screenshot",
+        "type": "SCREENSHOT",
+        "purpose": "CATALOG_SCREENSHOT",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-video-flutter-mobile/media/web-screenshot.png",
+        "platform": "WEB",
+        "locale": "en-US",
+        "deviceClass": "BROWSER",
+        "displayType": "WEB_DESKTOP",
+        "width": 1920,
+        "height": 1080,
+        "format": "PNG",
+        "fileSizeBytes": 1048576,
+        "alphaChannel": false,
+        "caption": "SDKWork Video Flutter Mobile product screenshot.",
+        "sortOrder": 0,
+        "enabled": true,
+        "metadata": {
+          "generatedPlaceholder": true,
+          "altText": "SDKWork Video Flutter Mobile app screenshot."
+        }
+      }
+    ],
+    "previews": [
+      {
+        "id": "sdkwork-video-flutter-mobile-catalog-preview",
+        "type": "PREVIEW_IMAGE",
+        "purpose": "CATALOG_PREVIEW",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-video-flutter-mobile/media/preview-cover.png",
+        "platform": "WEB",
+        "locale": "en-US",
+        "width": 1600,
+        "height": 900,
+        "format": "PNG",
+        "fileSizeBytes": 786432,
+        "alphaChannel": false,
+        "caption": "SDKWork Video Flutter Mobile preview.",
+        "sortOrder": 0,
+        "enabled": true,
+        "metadata": {
+          "generatedPlaceholder": true,
+          "altText": "SDKWork Video Flutter Mobile preview cover."
+        }
+      }
+    ],
     "metadata": {
       "assetVersion": "0.1.0",
       "defaultLocale": "en-US"
@@ -140,7 +184,10 @@
           "checksumAlgorithm": "SHA-256",
           "checksum": "0d52cbf30d52cbf30d52cbf30d52cbf30d52cbf30d52cbf30d52cbf30d52cbf3",
           "deploymentProfile": "standalone",
-          "runtimeTarget": "flutter-android"
+          "runtimeTarget": "flutter-android",
+          "profileBinding": "fixed",
+          "targetPlatform": "android",
+          "clientArchitecture": "flutter"
         },
         {
           "id": "ios-universal-standalone-mobile-ipa",
@@ -155,7 +202,10 @@
           "checksumAlgorithm": "SHA-256",
           "checksum": "d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1",
           "deploymentProfile": "standalone",
-          "runtimeTarget": "flutter-ios"
+          "runtimeTarget": "flutter-ios",
+          "profileBinding": "fixed",
+          "targetPlatform": "ios",
+          "clientArchitecture": "flutter"
         }
       ],
       "metadata": {
@@ -181,8 +231,8 @@
         "content": "Initial SDKWork App Standard v3 manifest for SDKWork Video Flutter Mobile.",
         "highlights": [
           "SDKWork App Standard v3 configuration initialized",
-          "Flutter mobile application architecture standardized",
-          "iOS/Android packaging metadata prepared"
+          "platform_app projection metadata standardized",
+          "Download package matrix normalized"
         ],
         "packageIds": [
           "android-arm64-standalone-mobile-aab",

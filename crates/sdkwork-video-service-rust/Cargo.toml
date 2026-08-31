@@ -1,5 +1,5 @@
 [package]
-name = "sdkwork_video_service"
+name = "sdkwork-video-service-rust"
 version = "0.1.0"
 edition = "2021"
 description = "SDKWork video generation service orchestration contracts."

@@ -1,5 +1,5 @@
 [package]
-name = "sdkwork_video_core"
+name = "sdkwork-video-core-rust"
 version = "0.1.0"
 edition = "2021"
 description = "SDKWork video domain core contracts."

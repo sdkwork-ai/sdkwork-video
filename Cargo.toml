@@ -24,8 +24,8 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 tokio = { version = "1.48", features = ["macros", "rt-multi-thread"] }
 # SDKWork workspace members - declared once at workspace root
-sdkwork_video_core = { path = "crates/sdkwork-video-core-rust" }
-sdkwork_video_service = { path = "crates/sdkwork-video-service-rust" }
+sdkwork_video_core = { path = "crates/sdkwork-video-core-rust", package = "sdkwork-video-core-rust" }
+sdkwork_video_service = { path = "crates/sdkwork-video-service-rust", package = "sdkwork-video-service-rust" }
 sdkwork-video-generation-provider-spi = { path = "crates/sdkwork-video-generation-provider-spi" }
 sdkwork-video-generation-service = { path = "crates/sdkwork-video-generation-service" }
 sdkwork-video-generation-mcp-service = { path = "crates/sdkwork-video-generation-mcp-service" }

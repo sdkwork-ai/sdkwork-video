@@ -1871,6 +1871,7 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "sdkwork-web-bootstrap",
+ "sdkwork-web-core",
  "tokio",
 ]
 
@@ -1933,7 +1934,6 @@ dependencies = [
  "serde_json",
  "sqlx",
  "thiserror 2.0.19",
- "tokio",
  "tracing",
 ]
 
@@ -2097,6 +2097,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-video-core-rust"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-drive-workspace-service",
+ "serde_json",
+]
+
+[[package]]
 name = "sdkwork-video-generation-mcp-service"
 version = "0.1.0"
 dependencies = [
@@ -2127,7 +2135,7 @@ name = "sdkwork-video-generation-provider-spi"
 version = "0.1.0"
 dependencies = [
  "async-trait",
- "sdkwork_video_core",
+ "sdkwork-video-core-rust",
  "thiserror 2.0.19",
  "tokio",
 ]
@@ -2139,6 +2147,14 @@ dependencies = [
  "async-trait",
  "sdkwork-video-generation-provider-spi",
  "tokio",
+]
+
+[[package]]
+name = "sdkwork-video-service-rust"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-video-core-rust",
+ "sdkwork-video-generation-service",
 ]
 
 [[package]]
@@ -2203,22 +2219,6 @@ dependencies = [
  "sha2 0.10.9",
  "tokio",
  "tracing",
-]
-
-[[package]]
-name = "sdkwork_video_core"
-version = "0.1.0"
-dependencies = [
- "sdkwork-drive-workspace-service",
- "serde_json",
-]
-
-[[package]]
-name = "sdkwork_video_service"
-version = "0.1.0"
-dependencies = [
- "sdkwork-video-generation-service",
- "sdkwork_video_core",
 ]
 
 [[package]]

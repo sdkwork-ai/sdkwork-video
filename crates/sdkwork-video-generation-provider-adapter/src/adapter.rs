@@ -276,9 +276,20 @@ fn map_sdk_error(error: cloudrouter_open_sdk::SdkworkError) -> VideoGenerationPr
         cloudrouter_open_sdk::SdkworkError::Serialization(error) => {
             VideoGenerationProviderError::InvalidProviderResponse(error.to_string())
         }
+        cloudrouter_open_sdk::SdkworkError::ResponseBodyTooLarge { maximum_bytes } => {
+            VideoGenerationProviderError::InvalidProviderResponse(format!(
+                "provider response body exceeds {maximum_bytes} bytes"
+            ))
+        }
+        cloudrouter_open_sdk::SdkworkError::ApiStatus { code, trace_id } => {
+            VideoGenerationProviderError::Rejected(format!(
+                "provider api status {code} (traceId={trace_id})"
+            ))
+        }
         error @ (cloudrouter_open_sdk::SdkworkError::InvalidHeaderName(_)
         | cloudrouter_open_sdk::SdkworkError::InvalidHeaderValue(_)
-        | cloudrouter_open_sdk::SdkworkError::InvalidHttpMethod(_)) => {
+        | cloudrouter_open_sdk::SdkworkError::InvalidHttpMethod(_)
+        | cloudrouter_open_sdk::SdkworkError::MissingAccessToken) => {
             VideoGenerationProviderError::Configuration(error.to_string())
         }
     }

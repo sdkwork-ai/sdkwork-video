@@ -1,4 +1,5 @@
 packages:
+  - "../sdkwork-assets/sdks/sdkwork-assets-app-sdk/sdkwork-assets-app-sdk-typescript"
   - "apps/sdkwork-video-flutter-mobile"
   - "apps/sdkwork-video-flutter-mobile/packages/*"
   - "apps/sdkwork-video-h5"

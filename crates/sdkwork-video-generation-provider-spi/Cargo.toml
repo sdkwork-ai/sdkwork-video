@@ -1,9 +1,13 @@
 [package]
+rust-version.workspace = true
 name = "sdkwork-video-generation-provider-spi"
 version.workspace = true
 edition.workspace = true
 description = "Transport-neutral provider SPI for SDKWork video generation."
 
+
+[lints]
+workspace = true
 [dependencies]
 async-trait = "0.1"
 sdkwork_video_core.workspace = true

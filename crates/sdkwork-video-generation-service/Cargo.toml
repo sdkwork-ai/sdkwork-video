@@ -1,9 +1,13 @@
 [package]
+rust-version.workspace = true
 name = "sdkwork-video-generation-service"
 version.workspace = true
 edition.workspace = true
 description = "Unified SDKWork video generation service entrypoint."
 
+
+[lints]
+workspace = true
 [dependencies]
 async-trait = "0.1"
 sdkwork-video-generation-provider-spi.workspace = true

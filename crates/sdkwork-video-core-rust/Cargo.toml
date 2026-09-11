@@ -1,9 +1,13 @@
 [package]
+rust-version.workspace = true
 name = "sdkwork-video-core-rust"
 version = "0.1.0"
 edition = "2021"
 description = "SDKWork video domain core contracts."
 
+
+[lints]
+workspace = true
 [lib]
 name = "sdkwork_video_core"
 path = "src/lib.rs"

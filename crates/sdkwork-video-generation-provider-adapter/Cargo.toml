@@ -1,9 +1,13 @@
 [package]
+rust-version.workspace = true
 name = "sdkwork-video-generation-provider-adapter"
 version.workspace = true
 edition.workspace = true
 description = "Generated SDK adapter for SDKWork video generation providers."
 
+
+[lints]
+workspace = true
 [dependencies]
 async-trait = "0.1"
 cloudrouter-open-sdk.workspace = true

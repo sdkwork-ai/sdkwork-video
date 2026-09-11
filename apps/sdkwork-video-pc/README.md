@@ -45,5 +45,5 @@ pnpm dev
 pnpm build
 pnpm typecheck
 pnpm test
-pnpm tauri:dev  # When desktop package exists
+pnpm dev:desktop  # When desktop package exists
 ```

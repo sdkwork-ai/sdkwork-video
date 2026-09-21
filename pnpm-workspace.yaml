@@ -6,6 +6,7 @@ packages:
   - "apps/sdkwork-video-h5/packages/*"
   - "apps/sdkwork-video-pc"
   - "apps/sdkwork-video-pc/packages/*"
+  - "apps/sdkwork-video-common/packages/*"
   - "../sdkwork-iam/apps/sdkwork-iam-common/packages/sdkwork-iam-contracts"
   - "../sdkwork-iam/apps/sdkwork-iam-common/packages/sdkwork-iam-runtime"
   - "../sdkwork-iam/apps/sdkwork-iam-common/packages/sdkwork-iam-sdk-ports"

@@ -25,7 +25,7 @@ This is the repository root for SDKWork Video. Application roots are located in 
 - `apps/sdkwork-video-flutter-mobile/` - Flutter mobile application (iOS/Android)
 - `apps/sdkwork-video-h5/` - H5/Capacitor mobile web application
 
-Each application root has its own `sdkwork.app.config.json` and `AGENTS.md`.
+Each application root has its own `agent.app.config.json` and `AGENTS.md`.
 
 ## Local Dictionary Structure
 
@@ -33,7 +33,7 @@ Each application root has its own `sdkwork.app.config.json` and `AGENTS.md`.
 - `CLAUDE.md`: Claude Code compatibility shim that points to `AGENTS.md` and must not duplicate rules.
 - `GEMINI.md`: Gemini CLI compatibility shim that points to `AGENTS.md` and must not duplicate rules.
 - `CODEX.md`: Codex compatibility shim that points to `AGENTS.md` and must not duplicate rules.
-- `sdkwork.app.config.json`: not present at repository root; located in each application root under `apps/`.
+- `agent.app.config.json`: not present at repository root; located in each application root under `apps/`.
 - `.sdkwork/`: reserved local dictionary folder; create only for local skills, plugins, manifests, or AI workspace metadata.
 - `specs/`: not present here; use when local contracts need to narrow root standards.
 - `sdks/`: not present here; use only for SDK authority or generation surfaces.
@@ -50,7 +50,7 @@ Each application root has its own `sdkwork.app.config.json` and `AGENTS.md`.
 ## Spec Resolution Order
 
 1. Read this `AGENTS.md` and any nearer component-level `AGENTS.md`.
-2. Read `sdkwork.app.config.json` when present.
+2. Read `agent.app.config.json` when present.
 3. Read local `specs/README.md` and `specs/component.spec.json` when present.
 4. Read local `.sdkwork/README.md`, `.sdkwork/skills/`, and `.sdkwork/plugins/` when relevant.
 5. Read `../sdkwork-specs/README.md` and the task-specific root specs.

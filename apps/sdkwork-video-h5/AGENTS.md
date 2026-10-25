@@ -25,7 +25,7 @@ This is the H5 application root for SDKWork Video. It follows `APP_H5_ARCHITECTU
 ## Local Dictionary Structure
 
 - `AGENTS.md`: local agent entrypoint and relative SDKWORK spec index.
-- `sdkwork.app.config.json`: H5 application manifest.
+- `agent.app.config.json`: H5 application manifest.
 - `.sdkwork/`: local workspace metadata, skills, and plugins.
 - `specs/`: local component/application specs.
 - `sdks/`: SDK workspaces and generator inputs.
@@ -33,7 +33,7 @@ This is the H5 application root for SDKWork Video. It follows `APP_H5_ARCHITECTU
 ## Spec Resolution Order
 
 1. Read this `AGENTS.md` and any nearer component-level `AGENTS.md`.
-2. Read `sdkwork.app.config.json` when present.
+2. Read `agent.app.config.json` when present.
 3. Read local `specs/README.md` and `specs/component.spec.json` when present.
 4. Read local `.sdkwork/README.md`, `.sdkwork/skills/`, and `.sdkwork/plugins/` when relevant.
 5. Read `../../../../sdkwork-specs/README.md` and the task-specific root specs.

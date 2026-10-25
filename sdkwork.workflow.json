@@ -6,7 +6,7 @@
     "name": "sdkwork-video",
     "repository": "sdkwork-ai/sdkwork-video",
     "sourcePath": ".",
-    "configPath": "sdkwork.app.config.json"
+    "configPath": "agent.app.config.json"
   },
   "release": {
     "artifactPrefix": "sdkwork-video",

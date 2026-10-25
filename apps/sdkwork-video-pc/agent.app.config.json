@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
-  "kind": "sdkwork.app",
+  "kind": "agent.app",
   "app": {
-    "key": "sdkwork-video-h5",
-    "name": "SDKWork Video H5",
-    "displayName": "SDKWork Video H5",
-    "description": "SDKWork Video H5 mobile web application.",
+    "key": "sdkwork-video-pc",
+    "name": "SDKWork Video PC",
+    "displayName": "SDKWork Video PC",
+    "description": "SDKWork Video PC desktop application.",
     "vendor": "SDKWork",
     "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-video",
     "supportUrl": "https://sdkwork.com/support",
@@ -17,31 +17,30 @@
     "identifiers": {
       "packageName": null,
       "bundleId": null,
-      "desktopAppId": null,
-      "containerImage": "registry.sdkwork.com/apps/sdkwork-video-h5"
+      "desktopAppId": "com.sdkwork.sdkwork.video.pc.desktop",
+      "containerImage": "registry.sdkwork.com/apps/sdkwork-video-pc"
     }
   },
   "backend": {
     "profileKey": "backend-root-admin",
     "ownerMode": "tenant",
     "grantMode": "current",
-    "platform": "MOBILE",
+    "platform": "WEB",
     "appId": null,
     "tenantId": "100001",
     "organizationId": "0"
   },
   "runtime": {
-    "family": "mobile",
-    "framework": "react-capacitor",
+    "family": "web",
+    "framework": "react",
     "runtimes": [
       "WEB",
-      "CAPACITOR_IOS",
-      "CAPACITOR_ANDROID"
+      "BROWSER",
+      "DESKTOP"
     ],
     "deliveryModes": [
       "WEB_URL",
-      "APP_STORE",
-      "GOOGLE_PLAY"
+      "DIRECT_DOWNLOAD"
     ],
     "defaultPlatform": "WEB",
     "defaultArchitecture": "x64",
@@ -54,10 +53,10 @@
   "media": {
     "icons": {
       "primary": {
-        "id": "sdkwork-video-h5-primary-icon",
+        "id": "sdkwork-video-pc-primary-icon",
         "type": "ICON",
         "purpose": "PRIMARY",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-video-h5/assets/icon-1024.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-video-pc/assets/icon-1024.png",
         "platform": "APP",
         "locale": "en-US",
         "width": 1024,
@@ -78,10 +77,10 @@
     },
     "screenshots": [
       {
-        "id": "sdkwork-video-h5-web-screenshot",
+        "id": "sdkwork-video-pc-web-screenshot",
         "type": "SCREENSHOT",
         "purpose": "CATALOG_SCREENSHOT",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-video-h5/media/web-screenshot.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-video-pc/media/web-screenshot.png",
         "platform": "WEB",
         "locale": "en-US",
         "deviceClass": "BROWSER",
@@ -91,21 +90,21 @@
         "format": "PNG",
         "fileSizeBytes": 1048576,
         "alphaChannel": false,
-        "caption": "SDKWork Video H5 product screenshot.",
+        "caption": "SDKWork Video PC product screenshot.",
         "sortOrder": 0,
         "enabled": true,
         "metadata": {
           "generatedPlaceholder": true,
-          "altText": "SDKWork Video H5 app screenshot."
+          "altText": "SDKWork Video PC app screenshot."
         }
       }
     ],
     "previews": [
       {
-        "id": "sdkwork-video-h5-catalog-preview",
+        "id": "sdkwork-video-pc-catalog-preview",
         "type": "PREVIEW_IMAGE",
         "purpose": "CATALOG_PREVIEW",
-        "url": "https://cdn.sdkwork.com/apps/sdkwork-video-h5/media/preview-cover.png",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-video-pc/media/preview-cover.png",
         "platform": "WEB",
         "locale": "en-US",
         "width": 1600,
@@ -113,12 +112,12 @@
         "format": "PNG",
         "fileSizeBytes": 786432,
         "alphaChannel": false,
-        "caption": "SDKWork Video H5 preview.",
+        "caption": "SDKWork Video PC preview.",
         "sortOrder": 0,
         "enabled": true,
         "metadata": {
           "generatedPlaceholder": true,
-          "altText": "SDKWork Video H5 preview cover."
+          "altText": "SDKWork Video PC preview cover."
         }
       }
     ],
@@ -133,21 +132,23 @@
       "name": "sdkwork-skills-app"
     },
     "platforms": [
-      "H5",
-      "APP_IOS",
-      "APP_ANDROID"
+      "WEB",
+      "DESKTOP_WINDOWS",
+      "DESKTOP_MACOS",
+      "DESKTOP_LINUX"
     ],
     "installPlatforms": [
-      "H5",
-      "APP_IOS",
-      "APP_ANDROID"
+      "WEB",
+      "DESKTOP_WINDOWS",
+      "DESKTOP_MACOS",
+      "DESKTOP_LINUX"
     ],
-    "defaultPackageId": "h5-universal-cloud-mobile-zip",
+    "defaultPackageId": "web-universal-cloud-browser-zip",
     "storeUrl": "https://sdkwork.com/apps/sdkwork-video",
     "stores": [],
     "config": {
-      "workspaceRoot": "apps/sdkwork-video-h5",
-      "framework": "react-capacitor",
+      "workspaceRoot": "apps/sdkwork-video-pc",
+      "framework": "react",
       "managedBy": "manual"
     }
   },
@@ -170,18 +171,18 @@
   },
   "artifacts": {
     "installConfig": {
-      "defaultPackageId": "h5-universal-cloud-mobile-zip",
-      "installCommand": "sdkwork install sdkwork-video-h5",
-      "launchCommand": "sdkwork open sdkwork-video-h5",
-      "uninstallCommand": "sdkwork uninstall sdkwork-video-h5",
+      "defaultPackageId": "web-universal-cloud-browser-zip",
+      "installCommand": "sdkwork install sdkwork-video-pc",
+      "launchCommand": "sdkwork open sdkwork-video-pc",
+      "uninstallCommand": "sdkwork uninstall sdkwork-video-pc",
       "packages": [
         {
-          "id": "h5-universal-cloud-mobile-zip",
-          "name": "SDKWork Video H5 Web Bundle",
+          "id": "web-universal-cloud-browser-zip",
+          "name": "SDKWork Video PC Web Bundle",
           "sourceType": "WEB_URL",
           "packageFormat": "ZIP",
-          "platform": "H5",
-          "url": "https://cdn.sdkwork.com/apps/sdkwork-video-h5/STABLE/0.1.0/h5.zip",
+          "platform": "WEB",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-video-pc/STABLE/0.1.0/web.zip",
           "enabled": true,
           "metadata": {},
           "checksumAlgorithm": "SHA-256",
@@ -190,49 +191,71 @@
           "deploymentProfile": "cloud",
           "runtimeTarget": "browser",
           "profileBinding": "fixed",
-          "targetPlatform": "h5",
-          "clientArchitecture": "h5"
+          "targetPlatform": "web",
+          "clientArchitecture": "pc-web"
         },
         {
-          "id": "ios-universal-standalone-mobile-ipa",
-          "name": "SDKWork Video H5 iOS Capacitor Bundle",
+          "id": "windows-x64-standalone-desktop-zip",
+          "name": "SDKWork Video PC Windows Bundle",
           "sourceType": "BINARY_URL",
-          "packageFormat": "IPA",
-          "platform": "APP_IOS",
-          "url": "https://cdn.sdkwork.com/apps/sdkwork-video-h5/STABLE/0.1.0/ios/app.ipa",
+          "packageFormat": "ZIP",
+          "platform": "DESKTOP_WINDOWS",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-video-pc/STABLE/0.1.0/windows/x64/app.zip",
+          "enabled": true,
+          "metadata": {},
+          "architecture": "x64",
+          "checksumAlgorithm": "SHA-256",
+          "checksum": "d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1",
+          "deploymentProfile": "standalone",
+          "runtimeTarget": "desktop",
+          "profileBinding": "fixed",
+          "targetPlatform": "windows",
+          "clientArchitecture": "tauri"
+        },
+        {
+          "id": "macos-universal-standalone-desktop-dmg",
+          "name": "SDKWork Video PC macOS Bundle",
+          "sourceType": "BINARY_URL",
+          "packageFormat": "DMG",
+          "platform": "DESKTOP_MACOS",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-video-pc/STABLE/0.1.0/macos/universal/app.dmg",
           "enabled": true,
           "metadata": {},
           "architecture": "universal",
           "checksumAlgorithm": "SHA-256",
-          "checksum": "d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1d2c446d1",
-          "deploymentProfile": "standalone",
-          "runtimeTarget": "capacitor-ios",
-          "profileBinding": "fixed",
-          "targetPlatform": "ios",
-          "clientArchitecture": "capacitor"
-        },
-        {
-          "id": "android-arm64-standalone-mobile-aab",
-          "name": "SDKWork Video H5 Android Capacitor Bundle",
-          "sourceType": "BINARY_URL",
-          "packageFormat": "AAB",
-          "platform": "APP_ANDROID",
-          "url": "https://cdn.sdkwork.com/apps/sdkwork-video-h5/STABLE/0.1.0/android/app.aab",
-          "enabled": true,
-          "metadata": {},
-          "architecture": "arm64",
-          "checksumAlgorithm": "SHA-256",
           "checksum": "de5afb41de5afb41de5afb41de5afb41de5afb41de5afb41de5afb41de5afb41",
           "deploymentProfile": "standalone",
-          "runtimeTarget": "capacitor-android",
+          "runtimeTarget": "desktop",
           "profileBinding": "fixed",
-          "targetPlatform": "android",
-          "clientArchitecture": "capacitor"
+          "targetPlatform": "macos",
+          "clientArchitecture": "tauri"
+        },
+        {
+          "id": "linux-x64-standalone-desktop-appimage",
+          "name": "SDKWork Video PC Linux Bundle",
+          "sourceType": "BINARY_URL",
+          "packageFormat": "APPIMAGE",
+          "platform": "DESKTOP_LINUX",
+          "url": "https://cdn.sdkwork.com/apps/sdkwork-video-pc/STABLE/0.1.0/linux/generic/x64/app.AppImage",
+          "enabled": true,
+          "metadata": {
+            "linux": {
+              "distro": "generic"
+            }
+          },
+          "architecture": "x64",
+          "checksumAlgorithm": "SHA-256",
+          "checksum": "de50b0c2de50b0c2de50b0c2de50b0c2de50b0c2de50b0c2de50b0c2de50b0c2",
+          "deploymentProfile": "standalone",
+          "runtimeTarget": "desktop",
+          "profileBinding": "fixed",
+          "targetPlatform": "linux",
+          "clientArchitecture": "tauri"
         }
       ],
       "metadata": {
-        "workspaceRoot": "apps/sdkwork-video-h5",
-        "framework": "react-capacitor",
+        "workspaceRoot": "apps/sdkwork-video-pc",
+        "framework": "react",
         "packageManager": "pnpm",
         "migratedFromLegacyConfig": false
       }
@@ -248,18 +271,19 @@
       {
         "version": "0.1.0",
         "releaseChannel": "STABLE",
-        "title": "SDKWork Video H5 0.1.0",
-        "summary": "SDKWork Video H5 initialized standard release.",
-        "content": "Initial SDKWork App Standard v3 manifest for SDKWork Video H5.",
+        "title": "SDKWork Video PC 0.1.0",
+        "summary": "SDKWork Video PC initialized standard release.",
+        "content": "Initial SDKWork App Standard v3 manifest for SDKWork Video PC.",
         "highlights": [
           "SDKWork App Standard v3 configuration initialized",
           "platform_app projection metadata standardized",
           "Download package matrix normalized"
         ],
         "packageIds": [
-          "h5-universal-cloud-mobile-zip",
-          "ios-universal-standalone-mobile-ipa",
-          "android-arm64-standalone-mobile-aab"
+          "web-universal-cloud-browser-zip",
+          "windows-x64-standalone-desktop-zip",
+          "macos-universal-standalone-desktop-dmg",
+          "linux-x64-standalone-desktop-appimage"
         ],
         "publishedAt": "2026-06-14T00:00:00Z",
         "current": true,
@@ -278,7 +302,7 @@
     "build": {
       "targets": []
     },
-    "sourceRoot": "apps/sdkwork-video-h5"
+    "sourceRoot": "apps/sdkwork-video-pc"
   },
   "metadata": {
     "standardOwner": "sdkwork-platform",

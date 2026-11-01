@@ -1,12 +1,5 @@
 
 # SDKWork local environment and runtime config overrides
-.env.local
-.env.development.local
-.env.test.local
-.env.staging.local
-.env.production.local
-.env.postgres
-.env.release.local
 config/*.local.toml
 
 # Rust build outputs
@@ -23,13 +16,6 @@ node_modules/
 .env.*
 !.env.example
 !.env.*.example
-.env.local
-.env.development.local
-.env.test.local
-.env.staging.local
-.env.production.local
-.env.postgres
-.env.release.local
 
 # Local tooling and workspace state
 .mimocode/
@@ -49,7 +35,6 @@ tools/.gateway-alignment-report.json
 **/.runtime/
 /target/
 **/target/
-!.env.postgres.example
 dist/
 **/dist/
 coverage/

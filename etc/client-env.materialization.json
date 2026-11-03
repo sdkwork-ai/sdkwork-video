@@ -122,6 +122,21 @@
           "iam:self"
         ]
       }
+    },
+    {
+      "id": "sdkwork-video-flutter-mobile",
+      "root": "apps/sdkwork-video-flutter-mobile",
+      "format": "flutter",
+      "runtimeTarget": "flutter-android",
+      "bindings": {},
+      "accessToken": {
+        "appId": "sdkwork-video-flutter-mobile",
+        "tenantId": "100001",
+        "organizationId": "0",
+        "permissionScope": [
+          "iam:self"
+        ]
+      }
     }
   ]
 }

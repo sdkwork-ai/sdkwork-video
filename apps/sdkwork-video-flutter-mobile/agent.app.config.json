@@ -26,9 +26,12 @@
     "ownerMode": "tenant",
     "grantMode": "current",
     "platform": "MOBILE",
-    "appId": null,
+    "appId": "sdkwork-video-flutter-mobile",
     "tenantId": "100001",
-    "organizationId": "0"
+    "organizationId": "0",
+    "accessTokenPermissionScope": [
+      "iam:self"
+    ]
   },
   "runtime": {
     "family": "mobile",
